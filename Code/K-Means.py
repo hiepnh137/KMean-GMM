@@ -34,7 +34,6 @@ class KMeans:
             self.compute_loss()
             epoch += 1
             print('Epoch {}:-----------------------------'.format(epoch + 1))
-        self.plot()
 
     def criterion(self,epoch, n_epochs, epsi, plot):
         #check stopping criterion
@@ -99,8 +98,11 @@ def generate_data(n_samples= 3000):
     y = np.array([x[i] for i in index])  # shape= (n, d)
     return y
 
-# KM = KMeans(n_clusters= 3, n_features= 2)
-# X = generate_data(n_samples= 1000)
+X_generate = generate_data(n_samples= 1000)
+KM1 = KMeans(n_clusters= 3, n_features= 2)
+KM1.fit(X_generate)
 
-inKM = KMeans(n_clusters= 3, n_features= 4)
-KM.fit(X)
+
+X_iris = datasets.load_iris()['data']
+KM2 = KMeans(n_clusters= 3, n_features= 4)
+KM2.fit(X_iris)
