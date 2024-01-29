@@ -1,4 +1,4 @@
-# Project-1
+# KMean-GMM
 My implementation of K-Means, Gaussian Mixture Model
 ## Installation
 ```
